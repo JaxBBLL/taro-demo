@@ -1,4 +1,4 @@
-import Taro from '@tarojs/taro'
+import Taro from '@tarojs/taro';
 
 export function request(method, url, data = {}) {
   return new Promise((resolve, reject) => {
@@ -11,11 +11,11 @@ export function request(method, url, data = {}) {
         'content-type': 'application/json' // 默认值
       },
       success: function(res) {
-        resolve(res.data)
+        resolve(res.data);
       },
       fail: function(err) {
-        reject(err)
+        reject(err);
       }
-    })
-  })
+    });
+  });
 }

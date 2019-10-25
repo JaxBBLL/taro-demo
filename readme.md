@@ -37,3 +37,15 @@ Taro 是一套遵循 React 语法规范的 多端开发 解决方案，使用 Ta
 ### JS 编码必须用单引号
 
 在 Taro 中，JS 代码里必须书写单引号，特别是 JSX 中，如果出现双引号，可能会导致编译错误。项目已经使用.prettierrc.json配置格式化，请使用vscode并安装Prettier插件
+
+### 忽略px转rem
+
+当前忽略单个属性的最简单的方法，就是 px 单位使用大写字母。/* prettier-ignore */ 注释可以让prettier忽略格式化
+
+```css
+page {
+  /* prettier-ignore */
+  font-size: 12PX;
+}
+```
+

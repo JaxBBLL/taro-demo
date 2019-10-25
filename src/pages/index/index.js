@@ -1,16 +1,16 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro, { Component } from '@tarojs/taro';
 
-import { View, Text } from '@tarojs/components'
-import SwiperComponent from '@components/swiper'
-import FixedBar from '@components/fixed-bar'
-import { AtGrid } from 'taro-ui'
+import { View, Text } from '@tarojs/components';
+import SwiperComponent from '@components/swiper';
+import FixedBar from '@components/fixed-bar';
+import { AtGrid } from 'taro-ui';
 
-import './index.scss'
+import './index.scss';
 
 export default class Index extends Component {
   config = {
     navigationBarTitleText: '首页'
-  }
+  };
 
   // 类的实例属性，es7的提案，安装babel插件可以转译
   state = {
@@ -41,35 +41,35 @@ export default class Index extends Component {
         value: '手机馆'
       }
     ]
-  }
+  };
 
   componentWillMount() {}
 
   componentDidMount() {
-    console.log('componentDidMount')
+    console.log('componentDidMount');
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount')
+    console.log('componentWillUnmount');
   }
 
   componentDidShow() {
-    console.log('componentDidShow')
+    console.log('componentDidShow');
   }
 
   componentDidHide() {
-    console.log('componentDidHide')
+    console.log('componentDidHide');
   }
 
   render() {
-    const { swiperList, gridList } = this.state
+    const { swiperList, gridList } = this.state;
     return (
-      <View className="page-index">
+      <View className='page-index'>
         <FixedBar />
         <SwiperComponent list={swiperList} />
         <AtGrid columnNum={4} hasBorder={false} data={gridList} />
-        <View className="m-tittle">产品设计案例</View>
+        <View className='m-tittle'>产品设计案例</View>
       </View>
-    )
+    );
   }
 }
