@@ -1,0 +1,61 @@
+@mixin loop-space($count) {
+  @while $count > 0 {
+    .mb#{$count} {
+      margin-bottom: ( 1px * $count);
+    }
+    .mt#{$count} {
+      margin-top: ( 1px * $count);
+    }
+    .ml#{$count} {
+      margin-left: ( 1px * $count);
+    }
+    .pt#{$count} {
+      padding-top: ( 1px * $count);
+    }
+    .pb#{$count} {
+      padding-bottom: ( 1px * $count);
+    }
+    .m#{$count} {
+      margin: ( 1px * $count);
+    }
+    .p#{$count} {
+      padding: ( 1px * $count);
+    }
+    .pv#{$count} {
+      padding: ( 1px * $count) 0;
+    }
+    $count: $count - 5;
+  }
+}
+
+@mixin loop-font($size) {
+  @while $size > 11 {
+    .f#{$size} {
+      font-size: ( 1px * $size);
+    }
+    $size: $size - 2;
+  }
+}
+
+
+@mixin text-overflow($w:auto) {
+  width: $w;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+// 多行省略号
+@mixin text-overflow-line($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+@mixin shadow($color: #d0d0d0) {
+  box-shadow: 0px 0px 13px 0px $color;
+}

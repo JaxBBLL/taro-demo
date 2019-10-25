@@ -1,0 +1,10 @@
+{
+  "appid": "16323983",
+  "setting": {
+    "urlCheck": false
+  },
+  "host": "baidu",
+  "swanJs": {
+    "baidu": "3.10.39"
+  }
+}

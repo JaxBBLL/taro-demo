@@ -1,0 +1,16 @@
+@import './styles/var.scss';
+@import '~taro-ui/dist/style/index.scss';
+@import './styles/common.scss';
+
+page {
+  font-size: 12PX;
+}
+.at-grid__flex .content-inner__text {
+  font-size: 12PX;
+}
+
+.m-tittle {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 30px;
+}

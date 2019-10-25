@@ -1,0 +1,20 @@
+@import "../../styles/var.scss";
+@import '../../styles/mixin.scss';
+
+.m-fixed-bar {
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  background-color: #fff;
+  padding: 10px;
+  z-index: 2000;
+  .at-icon {
+    font-size: 40px;
+    background-color: #fff;
+    color: gray;
+    border-radius: 50%;
+    padding: 15px;
+    margin-top: 20px;
+    @include shadow(#C0BFC4);
+  }
+}
