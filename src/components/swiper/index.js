@@ -31,11 +31,15 @@ export default class Index extends Component {
   }
 
   render() {
-    const { list } = this.props;
+    const {
+      list,
+      indicatorColor = '#fff',
+      indicatorActiveColor = '#38f'
+    } = this.props;
     return (
       <Swiper
-        indicatorColor='#fff'
-        indicatorActiveColor='#38f'
+        indicatorColor={indicatorColor}
+        indicatorActiveColor={indicatorActiveColor}
         circular
         indicatorDots
         autoplay

@@ -65,10 +65,8 @@ export default class Index extends Component {
     const { swiperList, gridList } = this.state;
     return (
       <View className='page-index'>
-        <FixedBar />
-        <SwiperComponent list={swiperList} />
+        <SwiperComponent list={swiperList} indicatorActiveColor='#ff6600' />
         <AtGrid columnNum={4} hasBorder={false} data={gridList} />
-        <View className='m-tittle'>产品设计案例</View>
       </View>
     );
   }
