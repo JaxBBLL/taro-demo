@@ -1,33 +1,39 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Image } from '@tarojs/components'
-import { AtIcon } from 'taro-ui'
-import './index.scss'
-export default class Index extends Component {
-  static options = {
-    addGlobalClass: true
-  }
-  state = {}
+/**
+ * Hooks Component
+ */
+import Taro, { useState } from '@tarojs/taro';
+import { View } from '@tarojs/components';
+import './index.scss';
 
-  onShare = () => {
-    // swan.openShare();
-  }
-
-  onCallPhone = () => {
-    // Taro.makePhoneCall({
-    //   phoneNumber: "000000" //仅为示例，并非真实的电话号码
-    // });
-  }
-
-  render() {
-    return (
-      <View className="m-fixed-bar">
-        <View>
-          <View className="at-icon at-icon-share" onClick={this.onShare} />
-        </View>
-        <View>
-          <View className="at-icon at-icon-phone" onClick={this.onCallPhone} />
-        </View>
+function Index() {
+  const onShare = () => {
+    swan.openShare({
+      success(res) {
+        Taro.showToast({
+          title: '分享成功'
+        });
+      }
+    });
+  };
+  const onCallPhone = () => {
+    Taro.makePhoneCall({
+      phoneNumber: '13812341234'
+    });
+  };
+  return (
+    <View className='m-fixed-bar'>
+      <View>
+        <View className='at-icon at-icon-share' onClick={onShare} />
       </View>
-    )
-  }
+      <View>
+        <View className='at-icon at-icon-phone' onClick={onCallPhone} />
+      </View>
+    </View>
+  );
 }
+
+Index.options = {
+  addGlobalClass: true
+};
+
+export default Index;
