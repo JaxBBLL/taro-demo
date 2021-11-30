@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 const useXState = initState => {
   const [state, setState] = useState(initState);
@@ -9,7 +9,7 @@ const useXState = initState => {
     setState(prev => {
       isUpdate.current = cb;
 
-      return typeof state === "function" ? state(prev) : state;
+      return typeof state === 'function' ? state(prev) : state;
     });
   };
 

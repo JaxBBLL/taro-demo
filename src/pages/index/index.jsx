@@ -14,7 +14,7 @@ const Page = props => {
 
   const clickHandle = () => {
     dispatch({
-      type: 'set_name',
+      type: 'get_users',
       payload: getUsersApi()
     });
   };

@@ -13,7 +13,7 @@ function isPromise(obj) {
 
 export function Provider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const asyncDispatch = action => {
+  const wrapperDispatch = action => {
     if (isPromise(action.payload)) {
       dispatch({ type: 'loading_start' });
       action.payload
@@ -29,7 +29,7 @@ export function Provider({ children }) {
     }
   };
   return (
-    <Context.Provider value={{ state, dispatch: asyncDispatch }}>
+    <Context.Provider value={{ state, dispatch: wrapperDispatch }}>
       {children}
     </Context.Provider>
   );

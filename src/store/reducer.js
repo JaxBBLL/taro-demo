@@ -11,7 +11,7 @@ export function reducer(state, action) {
         ...state,
         loading: false
       };
-    case 'set_name':
+    case 'get_users':
       return {
         ...state,
         users: action.payload.data

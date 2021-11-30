@@ -1,17 +1,17 @@
-const path = require("path");
+const path = require('path');
 const config = {
-  projectName: "taroDemo",
-  date: "2021-11-9",
+  projectName: 'taro-demo',
+  date: '2021-11-9',
   designWidth: 750,
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
     828: 1.81 / 2
   },
-  sourceRoot: "src",
+  sourceRoot: 'src',
   outputRoot: `dist/${process.env.TARO_ENV}`,
   alias: {
-    "@": path.resolve(__dirname, "..", "src")
+    '@': path.resolve(__dirname, '..', 'src')
   },
   plugins: [],
   defineConstants: {},
@@ -19,7 +19,7 @@ const config = {
     patterns: [],
     options: {}
   },
-  framework: "react",
+  framework: 'react',
   mini: {
     postcss: {
       pxtransform: {
@@ -35,15 +35,15 @@ const config = {
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
-          namingPattern: "module", // 转换模式，取值为 global/module
-          generateScopedName: "[name]__[local]___[hash:base64:5]"
+          namingPattern: 'module', // 转换模式，取值为 global/module
+          generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
     }
   },
   h5: {
-    publicPath: "/",
-    staticDirectory: "static",
+    publicPath: '/',
+    staticDirectory: 'static',
     postcss: {
       autoprefixer: {
         enable: true,
@@ -52,8 +52,8 @@ const config = {
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
-          namingPattern: "module", // 转换模式，取值为 global/module
-          generateScopedName: "[name]__[local]___[hash:base64:5]"
+          namingPattern: 'module', // 转换模式，取值为 global/module
+          generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
     }
@@ -61,8 +61,8 @@ const config = {
 };
 
 module.exports = function(merge) {
-  if (process.env.NODE_ENV === "development") {
-    return merge({}, config, require("./dev"));
+  if (process.env.NODE_ENV === 'development') {
+    return merge({}, config, require('./dev'));
   }
-  return merge({}, config, require("./prod"));
+  return merge({}, config, require('./prod'));
 };
