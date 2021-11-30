@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import Taro from '@tarojs/taro';
+import Layout from '@/components/Layout';
 import { View, Text, Button } from '@tarojs/components';
 import { useConnect } from '@/store/index';
 import { getUsersApi } from '@/services';
-import Loading from '@/components/Loading';
 import './index.scss';
 
 const Page = props => {
@@ -19,9 +20,13 @@ const Page = props => {
     });
   };
 
+  const gotoListPage = () => {
+    Taro.navigateTo({
+      url: '/pages/list/index'
+    });
+  };
   return (
-    <>
-      {state.loading && <Loading />}
+    <Layout>
       {state.users.map(user => {
         return (
           <View className='user' key={user}>
@@ -29,10 +34,15 @@ const Page = props => {
           </View>
         );
       })}
-      <Button type='primary' onClick={clickHandle}>
+      <Button type='primary' size='mini' onClick={clickHandle}>
         getUsers
       </Button>
-    </>
+      <View>
+        <Button type='info' size='mini' onClick={gotoListPage}>
+          link
+        </Button>
+      </View>
+    </Layout>
   );
 };
 // Page.options = {
