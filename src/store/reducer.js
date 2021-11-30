@@ -1,13 +1,22 @@
-import { state as initialState } from "./state";
-
 export function reducer(state, action) {
+  console.log(state, action);
   switch (action.type) {
-    case "CHANGENAME":
+    case 'loading_start':
       return {
-        ...initialState,
-        user: "JaxBBLL"
+        ...state,
+        loading: true
+      };
+    case 'loading_end':
+      return {
+        ...state,
+        loading: false
+      };
+    case 'set_name':
+      return {
+        ...state,
+        users: action.payload.data
       };
     default:
-      return initialState;
+      return state;
   }
 }

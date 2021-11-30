@@ -1,4 +1,4 @@
 export const state = {
-  user: "liusc",
-  age: 23
+  loading: false,
+  users: []
 };
