@@ -9,6 +9,7 @@ const Page = () => {
   return (
     <Layout>
       <Button
+        className='button'
         onClick={() => {
           dispatch({
             type: 'loading_start'

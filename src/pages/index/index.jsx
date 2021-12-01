@@ -34,11 +34,11 @@ const Page = props => {
           </View>
         );
       })}
-      <Button type='primary' size='mini' onClick={clickHandle}>
+      <Button className='button button-primary' onClick={clickHandle}>
         getUsers
       </Button>
       <View>
-        <Button type='info' size='mini' onClick={gotoListPage}>
+        <Button className='button button-danger' onClick={gotoListPage}>
           link
         </Button>
       </View>
