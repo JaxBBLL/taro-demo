@@ -11,10 +11,15 @@ export function reducer(state, action) {
         ...state,
         loading: false
       };
-    case 'get_users':
+    case 'get_aq_list':
       return {
         ...state,
-        users: action.payload.data
+        aqList: state.aqList.concat(action.payload || [])
+      };
+    case 'reset_aq_list':
+      return {
+        ...state,
+        aqList: []
       };
     default:
       return state;

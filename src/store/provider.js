@@ -20,6 +20,7 @@ export function Provider({ children }) {
         .then(v => {
           dispatch({ type: 'loading_end' });
           dispatch({ type: action.type, payload: v });
+          typeof action.callback === 'function' && action.callback(v);
         })
         .catch(() => {
           dispatch({ type: 'loading_end' });

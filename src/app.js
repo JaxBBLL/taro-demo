@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from './store/index';
-import './app.scss';
+import '@/styles/app.scss';
 
 class App extends Component {
   componentDidMount() {}

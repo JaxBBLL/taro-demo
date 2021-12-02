@@ -1,9 +1,4 @@
-export function getUsersApi(params) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({
-        data: ['JaxBBLL', 'liusc', 'Jack', 'Tom']
-      });
-    }, 1400);
-  });
-}
+import { request } from '@/common/request';
+
+export const getAqListApi = data =>
+  request('GET', `/api/v1/xcx/wd/page`, data, true, false);

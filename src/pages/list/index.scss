@@ -1,0 +1,71 @@
+.page-main {
+  padding: 20px 0;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  &::after {
+    display: block;
+    width: 44%;
+    content: '';
+  }
+  .list-item {
+    position: relative;
+    width: 44%;
+    margin-bottom: 30px;
+    background-color: #fff;
+    &::after {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      background: linear-gradient(90deg, #ff6602, #ff9356);
+      border-radius: 8px 0 0 8px;
+      text-align: center;
+      font-size: 24px;
+      padding: 5px 10px;
+      color: #fff;
+    }
+    &.video:after {
+      content: '视频';
+    }
+    &.audio:after {
+      content: '音频';
+    }
+    &.article:after {
+      content: '图文';
+    }
+  }
+
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 28px;
+  }
+
+  .img {
+    width: 330px;
+    height: 185px;
+    border-radius: 8px;
+  }
+  .des {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    color: #999;
+    margin-top: 10px;
+  }
+}
+
+.no-more {
+  text-align: center;
+  padding: 10px;
+  color: #999;
+  font-size: 24px;
+}

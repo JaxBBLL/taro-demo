@@ -1,22 +1,19 @@
-$white: #fff;
-$black: #000;
-$primary-color: #38f;
-$danger-color: rgb(255, 112, 87);
+@import './mixin.scss';
 
 .button {
   background-color: $white;
   &::after {
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid $border;
   }
   &.button-primary {
-    background-color: $primary-color;
+    background-color: $blue;
     color: $white;
     &::after {
       border: 1px solid transparent;
     }
   }
   &.button-danger {
-    background-color: $danger-color;
+    background-color: $red;
     color: $white;
     &::after {
       border: 1px solid transparent;

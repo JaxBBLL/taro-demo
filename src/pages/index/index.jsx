@@ -1,46 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Taro from '@tarojs/taro';
 import Layout from '@/components/Layout';
-import { View, Text, Button } from '@tarojs/components';
-import { useConnect } from '@/store/index';
-import { getUsersApi } from '@/services';
+import { View, Button } from '@tarojs/components';
 import './index.scss';
 
 const Page = props => {
-  const { state, dispatch } = useConnect();
-
-  useEffect(() => {
-    console.log('componentDidMount');
-  }, []);
-
-  const clickHandle = () => {
-    dispatch({
-      type: 'get_users',
-      payload: getUsersApi()
-    });
-  };
-
-  const gotoListPage = () => {
-    Taro.navigateTo({
-      url: '/pages/list/index'
-    });
-  };
   return (
     <Layout>
-      {state.users.map(user => {
-        return (
-          <View className='user' key={user}>
-            {user}
-          </View>
-        );
-      })}
-      <Button className='button button-primary' onClick={clickHandle}>
-        getUsers
+      <Button
+        className='button button-primary'
+        onClick={() => {
+          Taro.navigateTo({
+            url: '/pages/list/index'
+          });
+        }}
+      >
+        list page
       </Button>
-      <View>
-        <Button className='button button-danger' onClick={gotoListPage}>
-          link
-        </Button>
+      <View className='p-30 text-26'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        laborum quos earum ex ut magni magnam in ratione quam minus tempore
+        nihil quisquam sunt, recusandae exercitationem unde possimus explicabo
+        cupiditate.
       </View>
     </Layout>
   );

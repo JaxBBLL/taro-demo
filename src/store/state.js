@@ -1,4 +1,4 @@
 export const state = {
   loading: false,
-  users: []
+  aqList: []
 };
