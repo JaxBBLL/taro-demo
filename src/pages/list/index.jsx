@@ -3,7 +3,7 @@ import Taro, { useReachBottom } from '@tarojs/taro';
 import Layout from '@/components/Layout';
 import { View, Image, Text, Button } from '@tarojs/components';
 import { useConnect } from '@/store/index';
-import { getAqListApi } from '@/services';
+import { getListApi } from '@/services';
 import { dateFormat } from '@/common/util';
 import './index.scss';
 
@@ -11,7 +11,7 @@ const Page = props => {
   const { state, dispatch } = useConnect();
   const pageSize = 15;
   const [loaded, setLoaded] = useState(false);
-  const [pageNumber, setPageNumber] = useState(48);
+  const [pageNumber, setPageNumber] = useState(1);
 
   const getList = () => {
     if (loaded) {
@@ -19,21 +19,15 @@ const Page = props => {
     }
     dispatch({
       type: 'get_aq_list',
-      payload: getAqListApi({
+      payload: getListApi({
         pageNumber,
         pageSize
       }).then(res => {
-        if (!res.data.records.length) {
+        if (!res.data.length) {
           setLoaded(true);
         }
-        return res.data.records;
+        return res.data;
       })
-    });
-  };
-
-  const gotoListPage = item => {
-    Taro.navigateTo({
-      url: `/pages/list/index?id=${item.id}`
     });
   };
 
@@ -64,22 +58,16 @@ const Page = props => {
             const time = dateFormat(item.createTime, 'YYYY-MM-DD');
             const className = answerContentTypeMap[item.answerContentType];
             return (
-              <View
-                key={item.id}
-                className={'list-item ' + className}
-                onClick={() => {
-                  gotoListPage(item);
-                }}
-              >
+              <View key={item.id} className={'list-item ' + className}>
                 <Image
                   className='img'
-                  src={item.questionCoverThumbnail}
+                  src={item.thumbnail}
                   mode='aspectFill'
                 ></Image>
-                <View className='title'>{item.questionTitle}</View>
+                <View className='title'>{item.title}</View>
                 <View className='des'>
                   <Text>{time}</Text>
-                  <Text>{item.questionView}阅读</Text>
+                  <Text>{item.view}阅读</Text>
                 </View>
               </View>
             );
