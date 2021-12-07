@@ -1,7 +1,3 @@
-<template>
-  <text class="title">{{ msg }}</text>
-</template>
-
 <script>
 import { ref } from 'vue';
 import './index.scss';
@@ -14,6 +10,13 @@ export default {
     return {
       msg
     };
+  },
+  render() {
+    return (
+      <Layout>
+        <text class='title'>{msg.value}</text>
+      </Layout>
+    );
   }
 };
 </script>
