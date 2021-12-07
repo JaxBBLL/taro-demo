@@ -1,28 +1,28 @@
 <template>
-  <view>
-    <text>{{ msg }}</text>
+  <Layout>
+    <text class="title">{{ msg }}</text>
     <view>
-      <nut-button type="primary">主要按钮</nut-button>
-      <nut-button type="info">信息按钮</nut-button>
-      <nut-button type="default">默认按钮</nut-button>
-      <nut-button type="danger">危险按钮</nut-button>
-      <nut-button type="warning">警告按钮</nut-button>
-      <nut-button type="success">成功按钮</nut-button>
+      <nut-button type="primary" @tap="gotoList" @click="gotoList"
+        >主要按钮</nut-button
+      >
     </view>
-  </view>
+  </Layout>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import { useStore } from 'vuex';
+import Taro from '@tarojs/taro';
 import './index.scss';
-// export default {
-//   setup () {
-//     const msg = ref('Hello world')
-//     return {
-//       msg
-//     }
-//   }
-
-// }
-const msg = ref('Hello world222');
+const store = useStore();
+const msg = ref('home page...');
+const gotoList = () => {
+  store.commit('loadingStart');
+  setTimeout(() => {
+    store.commit('loadingEnd');
+    Taro.navigateTo({
+      url: '/pages/list/index'
+    });
+  }, 1000);
+};
 </script>

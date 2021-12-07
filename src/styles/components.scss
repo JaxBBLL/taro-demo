@@ -1,0 +1,22 @@
+@import './mixin.scss';
+
+.button {
+  background-color: $white;
+  &::after {
+    border: 1px solid $border;
+  }
+  &.button-primary {
+    background-color: $blue;
+    color: $white;
+    &::after {
+      border: 1px solid transparent;
+    }
+  }
+  &.button-danger {
+    background-color: $red;
+    color: $white;
+    &::after {
+      border: 1px solid transparent;
+    }
+  }
+}

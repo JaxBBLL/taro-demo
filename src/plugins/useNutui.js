@@ -6,4 +6,5 @@ export default function(App) {
   App.use(Button)
     .use(Cell)
     .use(Icon);
+  return App;
 }
