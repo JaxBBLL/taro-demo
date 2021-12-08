@@ -13,6 +13,7 @@
 import { ref } from 'vue';
 import { useStore } from 'vuex';
 import Taro from '@tarojs/taro';
+import { getResultDataApi } from '@/services';
 import './index.scss';
 const store = useStore();
 const msg = ref('home page...');
@@ -25,4 +26,6 @@ const gotoList = () => {
     });
   }, 1000);
 };
+
+getResultDataApi().then(res => {});
 </script>
