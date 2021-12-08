@@ -5,20 +5,13 @@
   </Layout>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
+import { usePullDownRefresh } from '@/hooks';
 import './index.scss';
 const msg = ref('This is list page');
 const list = ref(['Jack', 'Tom']);
-export default {
-  onPullDownRefresh() {
-    msg.value = 'haha';
-  },
-  setup() {
-    return {
-      msg,
-      list
-    };
-  }
-};
+usePullDownRefresh(() => {
+  msg.value = 'haha';
+});
 </script>
