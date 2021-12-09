@@ -10,7 +10,7 @@ import { ref } from 'vue';
 import { usePullDownRefresh } from '@/hooks';
 import './index.scss';
 const msg = ref('This is list page');
-const list = ref(['Jack', 'Tom']);
+const list = ref(['Jack', 'Tom', 'Peter', 'Lucy']);
 usePullDownRefresh(() => {
   msg.value = 'haha';
 });

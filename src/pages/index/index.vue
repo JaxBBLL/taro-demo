@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <text class="title">{{ msg }}</text>
+    <text>{{ msg }}</text>
     <view>
       <nut-button type="primary" @tap="gotoList" @click="gotoList"
         >主要按钮</nut-button

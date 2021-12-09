@@ -1,11 +1,13 @@
 <template>
   <view>
-    <Loading v-if="$store.state.loading">loading</Loading>
+    <Loading v-show="loadingShow">loading</Loading>
     <slot></slot>
   </view>
 </template>
 
 <script>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 import Loading from '@/components/Loading';
 export default {
   name: 'Layout',
@@ -13,4 +15,8 @@ export default {
     Loading
   }
 };
+</script>
+<script setup>
+const store = useStore();
+const loadingShow = computed(() => store.state.loading);
 </script>
