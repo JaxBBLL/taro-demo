@@ -7,11 +7,9 @@
 
 <script setup>
 import { ref } from 'vue';
-import { usePullDownRefresh } from '@/hooks';
+import { useDidShow } from '@tarojs/taro';
 import './index.scss';
 const msg = ref('This is list page');
 const list = ref(['Jack', 'Tom', 'Peter', 'Lucy']);
-usePullDownRefresh(() => {
-  msg.value = 'haha';
-});
+useDidShow(() => console.log('onShow'));
 </script>

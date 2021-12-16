@@ -1,6 +1,6 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "taro-vue3",
+  "projectname": "my-app",
   "description": "",
   "appid": "touristappid",
   "setting": {

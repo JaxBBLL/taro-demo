@@ -1,7 +1,7 @@
 const path = require('path');
 const config = {
-  projectName: 'taro-vue3',
-  date: '2021-12-1',
+  projectName: 'my-app',
+  date: '2021-12-16',
   designWidth: 375,
   deviceRatio: {
     640: 2.34 / 2,
@@ -14,7 +14,7 @@ const config = {
   alias: {
     '@': path.resolve(__dirname, '..', 'src')
   },
-  plugins: [],
+  plugins: ['@tarojs/plugin-html'],
   defineConstants: {},
   copy: {
     patterns: [],
@@ -45,7 +45,6 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
-    esnextModules: ['nutui-taro'],
     postcss: {
       autoprefixer: {
         enable: true,
