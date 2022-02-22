@@ -1,7 +1,8 @@
 const path = require('path');
+
 const config = {
-  projectName: 'my-app',
-  date: '2021-12-16',
+  projectName: 'taro-demo',
+  date: '2022-2-22',
   designWidth: 375,
   deviceRatio: {
     640: 2.34 / 2,
@@ -14,7 +15,7 @@ const config = {
   alias: {
     '@': path.resolve(__dirname, '..', 'src')
   },
-  plugins: ['@tarojs/plugin-html'],
+  plugins: [],
   defineConstants: {},
   copy: {
     patterns: [],
