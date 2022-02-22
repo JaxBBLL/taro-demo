@@ -2,9 +2,7 @@
   <Layout>
     <text>{{ msg }}</text>
     <view>
-      <nut-button type="primary" @tap="gotoList" @click="gotoList"
-        >主要按钮</nut-button
-      >
+      <nut-button type="primary" @tap="gotoList">主要按钮</nut-button>
     </view>
   </Layout>
 </template>

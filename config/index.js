@@ -15,7 +15,10 @@ const config = {
   alias: {
     '@': path.resolve(__dirname, '..', 'src')
   },
-  plugins: [],
+  plugins: ['@tarojs/plugin-html'],
+  scss: {
+    data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
+  },
   defineConstants: {},
   copy: {
     patterns: [],
