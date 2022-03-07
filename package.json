@@ -36,12 +36,12 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@nutui/nutui-taro": "^3.1.16",
+    "@nutui/nutui-taro": "^3.1.17",
     "@tarojs/components": "3.4.2",
     "@tarojs/plugin-framework-vue3": "3.4.2",
     "@tarojs/runtime": "3.4.2",
     "@tarojs/taro": "^3.4.2",
-    "vue": "^3.0.0",
+    "vue": "^3.2.31",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
@@ -51,7 +51,7 @@
     "@tarojs/plugin-html": "^3.4.2",
     "@tarojs/webpack-runner": "3.4.2",
     "@types/webpack-env": "^1.13.6",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.31",
     "babel-plugin-import": "^1.13.3",
     "babel-preset-taro": "3.4.2",
     "eslint": "^6.8.0",
